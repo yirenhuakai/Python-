@@ -1,0 +1,28 @@
+一、pip指令介绍
+Python 使用pip来管理扩展模块，包括安装和卸载，具体指令包括：
+pip install opencv-contrib-python
+pip install xx: 安装xx模块
+pip list: 列出已安装的模块
+pip install --upgrade xx: 升级xx模块
+pip uninstall xx: 卸载xx模块
+用pip download xx -d 目录：下载所需安装的模块whl包到指定目录
+pip install *.whl：在下载包的目录执行将安装目录下所有下载的包
+二、pip安装模块时模块的来源
+pip安装第三方模块时，默认从Python官方模块库：https://pypi.python.org下载，但也可以更换下其他下载地址，目前在网上有很多可用的下载源，例如
+　　　　豆瓣网：http://pypi.douban.com/simple/
+　　　　清华大学：https://pypi.tuna.tsinghua.edu.cn/simple
+　　　　
+清华大学的下载源是官网pypi的镜像，每隔5分钟同步一次。
+1、使用-i参数指定下载地址
+　　　例如安装win32扩展库：
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pywin32。
+　　
+2、通过配置文件指定下载地址
+
+Linux下，创建或修改 ~/.pip/pip.conf，确保有如下配置项：
+　　　　[global]
+　　　　index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+Windows下，users目录当前用户目录（cd c:\users%USERNAME%）中创建一个pip目录，并创建或修改pip.ini，内容如下：
+　　　　[global]
+　　　　index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+    
